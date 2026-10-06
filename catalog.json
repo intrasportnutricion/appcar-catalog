@@ -1,5 +1,14 @@
 [
   {
+    "name": "Fermata Auto",
+    "packageName": "me.aap.fermata.auto.dear.google.why",
+    "versionCode": 0,
+    "versionName": "2.0.2",
+    "description": "Reproductor para Android Auto (YouTube y vídeo). Úsalo solo con el coche parado.",
+    "apkUrl": "https://github.com/AndreyPavlenko/Fermata/releases/download/2.0.2/fermata-auto-2.0.2-arm64.apk",
+    "sha256": "9833785e13a8f54afecd877f06ae579d7d245bcd5d218576af98000c4089decd"
+  },
+  {
     "name": "Fermata Auto (YouTube y vídeo con el coche parado)",
     "description": "Reproductor open source para Android Auto: YouTube, vídeos locales y más. Úsalo solo con el coche parado. Descarga el APK fermata-auto de la última versión.",
     "openUrl": "https://github.com/AndreyPavlenko/Fermata/releases"
