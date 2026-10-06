@@ -49,7 +49,7 @@ fun StoreScreen() {
 
     Column(Modifier.fillMaxSize().padding(16.dp).statusBarsPadding()) {
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-            Text("AAStore", style = MaterialTheme.typography.headlineMedium, modifier = Modifier.weight(1f))
+            Text("install-appaauto", style = MaterialTheme.typography.headlineMedium, modifier = Modifier.weight(1f))
             TextButton(onClick = { refresh++ }) { Text("Actualizar") }
         }
         if (loading) LinearProgressIndicator(Modifier.fillMaxWidth())

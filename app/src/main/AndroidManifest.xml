@@ -5,7 +5,7 @@
     <!-- Necesario para saber qué apps del catálogo ya están instaladas (no apto para Play Store) -->
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
     <application
-        android:label="AAStore"
+        android:label="install-appaauto"
         android:theme="@style/Theme.AAStore"
         android:usesCleartextTraffic="false">
         <activity android:name=".MainActivity" android:exported="true">
