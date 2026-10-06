@@ -1,11 +1,11 @@
 [
   {
-    "name": "Ejemplo",
-    "packageName": "com.example.app",
+    "name": "Ejemplo Media Player",
+    "packageName": "com.example.mediaplayer",
     "versionCode": 1,
     "versionName": "1.0",
-    "description": "App de prueba",
-    "apkUrl": "https://example.com/app.apk",
-    "sha256": "PENDIENTE"
+    "description": "Sustituye esta entrada por una app compatible con Android Auto.",
+    "apkUrl": "https://example.com/apks/mediaplayer-1.0.apk",
+    "sha256": "REEMPLAZA_POR_EL_SHA256_DEL_APK"
   }
 ]
