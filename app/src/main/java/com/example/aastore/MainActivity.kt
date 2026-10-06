@@ -1,6 +1,8 @@
 package com.example.aastore
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -54,37 +56,46 @@ fun StoreScreen() {
         error?.let { Text(it, color = MaterialTheme.colorScheme.error) }
         LazyColumn(verticalArrangement = Arrangement.spacedBy(12.dp)) {
             items(apps) { app ->
-                val installed = installedVersion(ctx, app.packageName)
+                val isLink = app.openUrl.isNotEmpty()
+                val installed = if (isLink) null else installedVersion(ctx, app.packageName)
                 val label = when {
+                    isLink -> "Abrir"
                     installed == null -> "Instalar"
                     installed < app.versionCode -> "Actualizar"
                     else -> "Instalada"
                 }
+                val key = app.name
                 Card(Modifier.fillMaxWidth()) {
                     Column(Modifier.padding(16.dp)) {
                         Text(app.name, style = MaterialTheme.typography.titleMedium)
-                        Text("v${app.versionName}", style = MaterialTheme.typography.labelSmall)
+                        if (app.versionName.isNotEmpty())
+                            Text("v${app.versionName}", style = MaterialTheme.typography.labelSmall)
                         Spacer(Modifier.height(4.dp))
                         Text(app.description, style = MaterialTheme.typography.bodyMedium)
                         Spacer(Modifier.height(8.dp))
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             Button(
-                                enabled = label != "Instalada" && status[app.packageName] == null,
+                                enabled = label != "Instalada" && status[key] == null,
                                 onClick = {
-                                    scope.launch {
+                                    if (isLink) {
+                                        ctx.startActivity(
+                                            Intent(Intent.ACTION_VIEW, Uri.parse(app.openUrl))
+                                                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                                        )
+                                    } else scope.launch {
                                         try {
-                                            status[app.packageName] = "Descargando 0%"
+                                            status[key] = "Descargando 0%"
                                             val f = withContext(Dispatchers.IO) {
-                                                Installer.download(ctx, app) { p -> status[app.packageName] = "Descargando $p%" }
+                                                Installer.download(ctx, app) { p -> status[key] = "Descargando $p%" }
                                             }
                                             Installer.install(ctx, f)
                                         } catch (e: Exception) {
                                             error = "Error con ${app.name}: ${e.message}"
-                                        } finally { status.remove(app.packageName) }
+                                        } finally { status.remove(key) }
                                     }
                                 }
                             ) { Text(label) }
-                            status[app.packageName]?.let { Spacer(Modifier.width(12.dp)); Text(it) }
+                            status[key]?.let { Spacer(Modifier.width(12.dp)); Text(it) }
                         }
                     }
                 }

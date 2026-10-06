@@ -1,11 +1,7 @@
 [
   {
-    "name": "Ejemplo Media Player",
-    "packageName": "com.example.mediaplayer",
-    "versionCode": 1,
-    "versionName": "1.0",
-    "description": "Sustituye esta entrada por una app compatible con Android Auto.",
-    "apkUrl": "https://example.com/apks/mediaplayer-1.0.apk",
-    "sha256": "REEMPLAZA_POR_EL_SHA256_DEL_APK"
+    "name": "YouTube",
+    "description": "Abre YouTube en el navegador del móvil. No se muestra en la pantalla de Android Auto.",
+    "openUrl": "https://www.youtube.com"
   }
 ]
