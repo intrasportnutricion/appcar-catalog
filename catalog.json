@@ -1,7 +1,17 @@
 [
   {
-    "name": "YouTube",
-    "description": "Abre YouTube en el navegador del móvil. No se muestra en la pantalla de Android Auto.",
+    "name": "Fermata Auto (YouTube y vídeo con el coche parado)",
+    "description": "Reproductor open source para Android Auto: YouTube, vídeos locales y más. Úsalo solo con el coche parado. Descarga el APK fermata-auto de la última versión.",
+    "openUrl": "https://github.com/AndreyPavlenko/Fermata/releases"
+  },
+  {
+    "name": "KingInstaller",
+    "description": "Instalador necesario para que Fermata aparezca en Android Auto. Elige el APK de Fermata y pulsa 'Install as King'.",
+    "openUrl": "https://github.com/fcaronte/KingInstaller/releases"
+  },
+  {
+    "name": "YouTube (solo móvil)",
+    "description": "Abre YouTube en el navegador del móvil. No se muestra en la pantalla del coche.",
     "openUrl": "https://www.youtube.com"
   }
 ]
