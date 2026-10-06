@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Ejemplo",
+    "packageName": "com.example.app",
+    "versionCode": 1,
+    "versionName": "1.0",
+    "description": "App de prueba",
+    "apkUrl": "https://example.com/app.apk",
+    "sha256": "PENDIENTE"
+  }
+]
